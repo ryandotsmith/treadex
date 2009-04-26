@@ -5,7 +5,7 @@ class Mission < ActiveRecord::Base
   #complete!
   def complete!
     self.status = 1
-    self.save
+    PostOffice.deliver_complete_mission(self.customer, self ) if self.save
   end#complete!
   ####################
   #rate!
