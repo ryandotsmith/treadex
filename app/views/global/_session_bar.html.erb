@@ -2,9 +2,7 @@
 <strong style='color:#39B63C;'>Messengers: </strong>
 <% if current_user %>
 		<%= link_to current_user.email, current_user.messenger %> 	
-		<%= link_to "sign out", { :controller 	=> 'sessions', 
-													 		:action 			=> 'destroy'}, 
-															:method 			=> :delete    %>
+		<%= link_to "sign out", session_path, :method => :delete %>
 <% else %>
 	<%= link_to "sign in", { 	:controller 	=> 'sessions', 
 												 		:action 			=> 'new' } %>
