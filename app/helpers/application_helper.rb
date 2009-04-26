@@ -25,4 +25,10 @@ module ApplicationHelper
       return "Rated"
     end
   end#status( object )
+  
+  def shorten( object )
+    return object if object.length < 100 
+		object[0..99] + " ..."
+  end#shorten
+
 end

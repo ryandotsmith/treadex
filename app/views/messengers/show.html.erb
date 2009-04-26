@@ -30,7 +30,13 @@
 <% if current_user == @messenger.user %>
 
 	<% if @messenger.around? %>
-		<p> You are checked in </p>
+	<%= button_to_remote "check out",
+	 							:url	=>	{   :controller		=>	'messengers',
+															:action				=>	'update',
+															:id						=>	@messenger.id,
+															:checking_in	=>  false },
+								:method	  => 'put' %>
+		
 	<% else %>
 		<p> you are currently checked out. To get some work, </p>
 		<%= button_to_remote "check in",

@@ -52,7 +52,7 @@ class Clearance::SessionsController < ApplicationController
   end
 
   def url_after_create
-    user_messenger_path
+    @user.messenger
   end
 
   def url_after_destroy

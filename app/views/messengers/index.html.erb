@@ -19,7 +19,7 @@
 <h4><%= link_to messenger.name + ".", messenger %></h4>
 <%= image_tag messenger.avatar.url,:size => "100x140", :style => "float:left; margin:0px 5px 5px 5px;border:0;"%>
 <p>
-<%= messenger.bio %>
+<%= shorten( messenger.bio )  %>
 <br />
 <%= link_to "Book this messenger.", new_customer_path(:id => messenger.id )%>
 
