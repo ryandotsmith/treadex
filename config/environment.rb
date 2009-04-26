@@ -9,6 +9,8 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
+  config.active_record.observers = :messenger_observer
+
   config.gem 'webrat',
     :version => '= 0.4.4'
   config.gem 'cucumber',

@@ -13,4 +13,16 @@ module ApplicationHelper
     []
   end#get_js
 
+  ####################
+  #status( object )
+  def to_status( input )
+    case input
+    when 0
+      return "In Progress"
+    when 1
+      return "Complete"
+    when 2
+      return "Rated"
+    end
+  end#status( object )
 end

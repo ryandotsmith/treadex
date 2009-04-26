@@ -1,27 +1,84 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 STRICT//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>TreadEx <%= controller.action_name %></title>
-	<% get_css.each do |sheet| %>
-		<%= stylesheet_link_tag sheet %>
-	<% end %>
-	<% get_js.each do |js|%>
-		<%= javascript_include_tag js %>
-	<% end%>
+	<title>TreadEx.</title>
+	<meta http-equiv="content-type" 
+		content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="icon" type="image/vnd.microsoft.icon" href="images/favicon.ico">
+
+		<style type="text/css" media="screen">
+		@import url("/stylesheets/style.css");
+		</style>
+		<%= javascript_include_tag :defaults %>
+
+
 </head>
+<body>
+<div id="container">
 
-<body>		 
 	<div id="header">
-	</div><!--end header-->
+		<div id="headerleft">
+			<h1>
+				<%= link_to "#{image_tag('header_single.gif', :style => 'border:0;')}", root_url %>
+			</h1>
+	</div>
 
-	<div id="info_bar">
-		<%= render :partial => 'global/flash', :locals => { :flash => flash }%>
-	</div><!--end info_bar-->
+		<div id="headerright">
+		<%= render :partial => 'global/session_bar'%>
+		</div>
 
-	<div id="container">
-		<%= yield  %>		
-	</div><!--end container-->
+	</div><!--/header-->
+
+	
+
+		<%= yield %>
+
+
+	
+	<div class="wideblock"><p>Search: Filter Results by:</p></div>
+	
+	<div id="footer">	
+		<div id="sidebar">
+			<div class="fourth">
+			<h3>About us.</h3>
+			<p>
+			Choosing to bicycle is a public act of individualism. We are reinforcing a self-reliant and critical mentality. We are concerned with a perfect finish and perfect operation of a mission.
+			</p>
+			</div><!--/div-->
+
+			<div class="fourth">
+			<h3>How does this work?</h3>
+			<p>
+			You have something to send through town. Here is your eco-friendly, inexpensive, simple, speedy, and fun method for its delivery. Hire a local bike messenger.  Use the "send a package now" button, or choose your favorite messenger from the display.  Our mission form will prompt for your name, phone number, and email address. After submitting these, a messenger will contact you to arrange pickup and delivery.
+			</p></div><!--/div-->
+
+			<div class="fourth">
+			<h3>Contact Us.</h3>
+			<p>
+			Form + Captcha.
+			</p>
+			</div><!--/div-->
+
+			<div class="fourth">
+			<h3>Legal.</h3>
+			<p>
+			This site exists only to furnish connections between independently contracting messengers and those with messages.  The site will not be held responsible for lost or damaged packages, and will not resolve disputes.
+			</p>
+			</div><!--/div-->
+
+		
+<span style="float:right; margin-right:10px;">&copy; Copyright 2009 <a href="#"><img src="/images/copyrightsize.gif" alt="TreadEx." border=0></a></span>
+		
+		</div><!--/sidebar-->
+	<div style="background-color:#F0CE57; height:4px; width:960px;">&nbsp;</div>
+	<div style="background-color:#39B63C; height:4px; width:960px;">&nbsp;</div>
+	</div><!--/footer-->	
+</div><!--/container-->
+
 
 </body>
 </html>

@@ -9,7 +9,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090425152435) do
+ActiveRecord::Schema.define(:version => 20090426021923) do
+
+  create_table "customers", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messengers", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "handle"
+    t.text     "bio"
+    t.string   "mobile"
+    t.string   "rate"
+    t.string   "rate_type"
+    t.string   "neighborhood"
+    t.datetime "checked_in"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "missions", :force => true do |t|
+    t.integer  "customer_id"
+    t.integer  "messenger_id"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"

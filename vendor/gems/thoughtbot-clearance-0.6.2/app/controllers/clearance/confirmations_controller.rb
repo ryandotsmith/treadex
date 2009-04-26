@@ -41,7 +41,7 @@ class Clearance::ConfirmationsController < ApplicationController
   end
 
   def url_after_create
-    root_url
+    new_user_messengers_path(@user)
   end
 
 end
