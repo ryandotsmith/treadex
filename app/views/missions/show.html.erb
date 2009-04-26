@@ -1,0 +1,17 @@
+<p>
+	<%= @mission.messenger.name %>	
+</p>
+<p>
+	<%= @mission.customer.name %>	
+</p>
+<p>
+	<%= to_status( @mission.status ) %>	
+</p>
+<% if @mission.status == 0 %>
+<%= link_to_remote "complete mission!",
+ 							:url	=>	{   :controller		=>	'missions',
+														:action				=>	'update',
+														:id						=>	@mission.id,
+														:complete_mission	=>  true },
+							:method	  => 'put' %>
+<% end %>

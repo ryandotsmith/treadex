@@ -1,0 +1,18 @@
+<% form_for [@user,@messenger] do |f|%>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :hangle %>
+	<%= f.text_field :handle %>
+
+	<%= f.label :bio %>
+	<%= f.text_area :bio %>
+
+
+	<%= f.label :rate %>
+	<%= f.text_field :rate %>
+
+	<%= f.submit "create"%>
+
+<% end %>

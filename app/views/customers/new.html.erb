@@ -1,0 +1,12 @@
+<p>
+	<% form_for @customer do |f| %>
+		<%= hidden_field_tag :messenger_id, @messenger.id %>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		<%= f.label :phone %>	
+		<%= f.text_field :phone %>	
+		<%= f.submit "submit" %>
+	<% end %>
+</p>

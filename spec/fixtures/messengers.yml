@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  handle: MyString
+  bio: MyText
+  mobile: MyString
+  rate: MyString
+
+two:
+  handle: MyString
+  bio: MyText
+  mobile: MyString
+  rate: MyString

@@ -1,0 +1,27 @@
+<div class="wideblock1" style="text-transform:none; text-align:center; padding:15px 0px 15px 0px;">
+
+	
+	<span style="font-size:1.8em; font-weight:bold; margin:5px 5px 10px 5px;">There are <%= Messenger.how_many_are_available %> messengers online now.</span><br /><br />
+
+		<div id="button">
+			<span><%= link_to "Send a package &raquo;", new_customer_path(:id => Messenger.find(:first).id), :style => "font-size:3em; font-weight:bold; padding:8px;"%></span>
+		</div>
+	
+
+</div><!-- /wideblock1 -->
+
+
+<!-- <div class="nav">Search: Filter by:</div> -->
+
+<% for messenger in @messengers %>
+<div class="third">
+
+<h4><%= link_to messenger.name + ".", messenger %></h4>
+<%= image_tag messenger.avatar.url,:size => "100x140", :style => "float:left; margin:0px 5px 5px 5px;border:0;"%>
+<p>
+<%= messenger.bio %>
+<%= link_to "Book this messenger.", new_customer_path(:id => messenger.id )%>
+
+</p>
+</div><!--/div-->
+<% end %>

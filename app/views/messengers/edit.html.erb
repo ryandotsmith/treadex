@@ -1,0 +1,20 @@
+<% form_for @messenger, :html => { :multipart => true } do |f|%>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :handle %>
+	<%= f.text_field :handle %>
+
+	<%= f.label :bio %>
+	<%= f.text_area :bio %>
+
+
+	<%= f.label :rate %>
+	<%= f.text_field :rate %>
+
+	<%= f.file_field :avatar %>
+
+	<%= f.submit "update"%>
+
+<% end %>
