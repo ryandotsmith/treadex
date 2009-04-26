@@ -17,7 +17,7 @@
 <div class="third">
 
 <h4><%= link_to messenger.name + ".", messenger %></h4>
-<%= image_tag messenger.avatar.url,:size => "100x140", :style => "float:left; margin:0px 5px 5px 5px;border:0;"%>
+<%= link_to "#{image_tag messenger.avatar.url,:size => "100x140", :style => "float:left; margin:0px 5px 5px 5px;border:0;"}", messenger %>
 <p>
 <%= shorten( messenger.bio )  %>
 <br /><br />
