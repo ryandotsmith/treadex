@@ -1,4 +1,4 @@
-HOST = "localhost"
+HOST = "treadex.org"
 DO_NOT_REPLY = "donotreply@treadex.org"
 
 # Specifies gem version of Rails to use when vendor/rails is not present

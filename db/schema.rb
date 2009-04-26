@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20090426021923) do
     t.integer  "customer_id"
     t.integer  "messenger_id"
     t.integer  "status"
+    t.integer  "rating",       :default => 0
+    t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -9,6 +9,16 @@ config.action_controller.consider_all_requests_local = false
 config.action_controller.perform_caching             = true
 config.action_view.cache_template_loading            = true
 
+config.action_mailer.smtp_settings = {
+  :address        => "mail.authsmtp.com",
+  :port           => 25,
+  :authentication => :login,
+  :tls            => false,
+  :domain         => "treadex.org",
+  :user_name      => "ac40809",
+  :password       => "ygnb5unza" 
+}
+
 # See everything in the log (default is :info)
 # config.log_level = :debug
 

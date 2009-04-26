@@ -1,0 +1,9 @@
+<% if @mission.status = 1 %>
+	<% form_for @mission do |f| %>
+		<%= hidden_field_tag :rate_mission, true %>
+		<%= f.text_field :comment %>
+		<%= radio_button :mission, :rating, -1 %>
+		<%= radio_button :mission, :rating, 1 %>
+		<%= f.submit "rate messenger."%>
+	<% end %>
+<% end %>

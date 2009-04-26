@@ -7,4 +7,10 @@ class Mission < ActiveRecord::Base
     self.status = 1
     self.save
   end#complete!
+  ####################
+  #rate!
+  def rate!
+    self.status = 2
+    self.save
+  end#rate!
 end

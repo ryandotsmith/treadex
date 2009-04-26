@@ -4,6 +4,8 @@ class CreateMissions < ActiveRecord::Migration
       t.belongs_to :customer
       t.belongs_to :messenger
       t.integer :status, :default => -1
+      t.integer :rating, :default => 0
+      t.string  :comment
       t.timestamps
     end
   end

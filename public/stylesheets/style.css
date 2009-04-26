@@ -372,7 +372,11 @@ background-color:#000;
 border:1px solid #F0CE57;
 }
 
-
+label{float:left;}
+input{float:right;}
+textarea{float:right;}
+#new_messenger{width:305px; height:auto;}
+#new_customer{width:305px; height:auto;}
 
 
 -->
