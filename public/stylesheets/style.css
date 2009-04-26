@@ -29,7 +29,7 @@ margin:0 auto;
 }
 
 #header{
-background:#000 url(headerbg.jpg) no-repeat top right ;
+background:#000 url(/images/headerbg.jpg) no-repeat top right ;
 color:#fff;
 /* padding:10px; */
 margin-bottom:10px;
