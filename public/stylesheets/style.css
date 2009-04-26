@@ -8,6 +8,7 @@ Author URI: http://www.karlfundenberger.com/
 Tags: fixed width, 960, grid, modular, Helvetica
 */
 
+<!--
 
 
 body{
@@ -27,13 +28,8 @@ text-align:left;
 margin:0 auto;
 }
 
-
-
-
-
-
 #header{
-background:#000 url(/images/headerbg.jpg) no-repeat top right ;
+background:#000 url(headerbg.jpg) no-repeat top right ;
 color:#fff;
 /* padding:10px; */
 margin-bottom:10px;
@@ -374,11 +370,7 @@ border:1px solid #F0CE57;
 
 /* ---------------- form ---------------- */
 
-label{float:left;}
-input{float:right;}
-#new_messenger{width:305px; height:auto;}
-
-
+.form{margin-left:300px; width:305px; height:auto;}
 
 
 
