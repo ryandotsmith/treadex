@@ -1,21 +1,27 @@
-<h2>Sign in</h2>
-
 <% form_for :session, :url => session_path do |form| %>
-  <div class="text_field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>  
-  </div>
-  <div class="text_field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div class="text_field">
-    <%= form.check_box :remember_me %>
-    <%= form.label :remember_me %>
-  </div>
-  <div class="submit_field">
-    <%= form.submit "Sign in", :disable_with => "Please wait..." %>
-  </div>
+
+		<table>
+
+		<tr>
+	    <td><%= form.label :email %></td>
+	    <td><%= form.text_field :email %></td>
+		</tr>
+
+		<tr>
+	    <td><%= form.label :password %></td>
+	    <td><%= form.password_field :password %></td>
+		</tr>
+
+		<tr>
+	    <td><%= form.check_box :remember_me %></td>
+	    <td><%= form.label :remember_me %></td>
+		</tr>
+
+		<tr>
+	   	<td><%= form.submit "Sign in", :disable_with => "Please wait..." %></td>
+		</tr>
+
+		</table>
 <% end %>
 
 <ul>

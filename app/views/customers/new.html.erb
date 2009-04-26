@@ -1,12 +1,23 @@
-<p>
-	<% form_for @customer do |f| %>
+	<% form_for @customer , :html => { :class => 'form' } do |f| %>
+		<table>
 		<%= hidden_field_tag :messenger_id, @messenger.id %>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-		<%= f.label :email %>
-		<%= f.text_field :email %>
-		<%= f.label :phone %>	
-		<%= f.text_field :phone %>	
-		<%= f.submit "submit" %>
+
+		<tr>
+			<td><%= f.label :name %></td>
+			<td><%= f.text_field :name %></td>
+		</tr>
+
+		<tr>
+			<td><%= f.label :email %></td>
+			<td><%= f.text_field :email %></td>
+		</tr>
+
+		<tr>
+			<td><%= f.label :phone %>	</td>
+			<td><%= f.text_field :phone %>	</td>
+		</tr>
+
+		<tr><td><%= f.submit "submit" %></td></tr>
+
+		</table>
 	<% end %>
-</p>

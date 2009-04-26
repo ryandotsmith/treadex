@@ -1,18 +1,27 @@
-<% form_for [@user,@messenger] do |f|%>
+<% form_for [@user,@messenger] , :html => { :class => 'form' } do |f|%>
+	<table>
 
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+	<tr>
+		<td><%= f.label :name %></td>
+		<td><%= f.text_field :name %></td>
+	</tr>
 
-	<%= f.label :handle %>
-	<%= f.text_field :handle %>
+	<tr>
+		<td><%= f.label :handle %></td>
+		<td><%= f.text_field :handle %></td>
+	</tr>
 
-	<%= f.label :bio %>
-	<%= f.text_area :bio , :size => "26x10"%>
+	<tr>
+		<td><%= f.label :bio %></td>
+		<td><%= f.text_area :bio , :size => "26x10"%></td>
+	</tr>
 
+	<tr>
+		<td><%= f.label :rate %></td>
+		<td><%= f.text_field :rate %></td>
+	</tr>
 
-	<%= f.label :rate %>
-	<%= f.text_field :rate %>
+	<tr><td><%= f.submit "create"%></td></tr>
 
-	<%= f.submit "create"%>
-
+	</table>
 <% end %>

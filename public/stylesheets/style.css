@@ -33,7 +33,7 @@ margin:0 auto;
 
 
 #header{
-background-color:#000;
+background:#000 url(/images/headerbg.jpg) no-repeat top right ;
 color:#fff;
 /* padding:10px; */
 margin-bottom:10px;
@@ -372,11 +372,14 @@ background-color:#000;
 border:1px solid #F0CE57;
 }
 
+/* ---------------- form ---------------- */
+
 label{float:left;}
 input{float:right;}
-textarea{float:right;}
 #new_messenger{width:305px; height:auto;}
-#new_customer{width:305px; height:auto;}
+
+
+
 
 
 -->
