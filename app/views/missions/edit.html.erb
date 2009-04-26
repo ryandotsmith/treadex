@@ -4,12 +4,20 @@
 		<%= hidden_field_tag :rate_mission, true %>
 
 		<tr>
-			<td><%= f.text_field :comment %></td>
+			<td></td>
+			<td><%= image_tag("thumbsup.gif") %></td>
+			<td><%= image_tag("thumbsdown.gif") %></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td><%= radio_button :mission, :rating, 1 %></td>
+			<td><%= radio_button :mission, :rating, -1 %></td>
 		</tr>
 
 		<tr>
-			<td><%= radio_button :mission, :rating, -1 %></td>
-			<td><%= radio_button :mission, :rating, 1 %></td>
+			<td><%= f.label :comment %></td>
+			<td><%= f.text_field :comment %></td>
 		</tr>
 
 		<tr><td><%= f.submit "rate messenger."%></td></tr>
@@ -17,3 +25,4 @@
 		</table>
 	<% end %>
 <% end %>
+

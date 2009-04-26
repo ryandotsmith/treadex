@@ -1,4 +1,5 @@
 <p>
+<strong style='color:#39B63C;'>Messengers: </strong>
 <% if current_user %>
 		<%= link_to current_user.email, current_user.messenger %> 	
 		<%= link_to "sign out", { :controller 	=> 'sessions', 

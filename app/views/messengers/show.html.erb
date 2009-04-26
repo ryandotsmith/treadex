@@ -3,11 +3,12 @@
 	<%= image_tag @messenger.avatar.url,:size => "100x140", :style => "float:left; margin:0px 5px 5px 5px;border:0;"%>
 
 	<p>
-		<ul>
-			<li>Rating</li>
-			<li>Territory</li>
-			<li>Delivery Rate</li>
-		</ul>
+		<table>
+			<tr><td><strong>Neighborhood</strong></td><td><%= @messenger.neighborhood %></td></tr>
+			<tr><td><strong>Rate</strong></td><td><%= @messenger.rate %></td></tr>
+			<tr><td><strong>Completed Missions</strong></td><td><%= @messenger.missions.count %></td></tr>
+		</table>
+
 	<%= link_to "Book this messenger.", new_customer_url( :id => @messenger.id )%>
 	<br /><br /><br /><br />
 	</p>
@@ -34,7 +35,7 @@
 	 							:url	=>	{   :controller		=>	'messengers',
 															:action				=>	'update',
 															:id						=>	@messenger.id,
-															:checking_in	=>  false },
+															:checking_out	=>  true },
 								:method	  => 'put' %>
 		
 	<% else %>
@@ -52,6 +53,7 @@
 	<ul>
 		<% @messenger.missions.each do |mission|%>
 			<%= link_to mission.created_at.to_date.to_s + " -- " + mission.customer.name.to_s + " -- " + to_status( mission.status ), mission %>
+			<br />
 		<% end %>
 	</ul>
 <% end %>

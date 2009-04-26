@@ -9,6 +9,11 @@
 	<td><%= f.label :handle %></td>
 	<td><%= f.text_field :handle %></td>
 	</tr>
+
+	<tr>
+		<td><%= f.label :neighborhood %></td>
+		<td><%= f.text_field :neighborhood %></td>
+	</tr>
 	
 	<tr>
 	<td><%= f.label :bio %></td>
@@ -20,6 +25,7 @@
 	<td><%= f.text_field :rate %></td>
 	</tr>	
 	<tr>
+		<td><%= f.label :avatar%></td>
 		<td><%= f.file_field :avatar %></td>
 	</tr>
 	<tr><td><%= f.submit "update"%></td></tr>

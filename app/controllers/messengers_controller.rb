@@ -26,7 +26,7 @@ class MessengersController < ApplicationController
     
     if @messenger.update_attributes( params[:messenger] )  
       @messenger.checked_in = DateTime.now if params[:checking_in] == "true"
-      @messenger.checking_in = nil if params[:checking_in] == "false"
+      @messenger.checked_in = DateTime.now.beginning_of_day if params[:checking_out] == "true"
       @messenger.save
       respond_to do |format|
         format.js { render :text => "ok" }

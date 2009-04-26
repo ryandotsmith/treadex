@@ -1,11 +1,11 @@
 <p>
-	<%= @mission.messenger.name %>	
+	Messenger: <%= @mission.messenger.name %>	
 </p>
 <p>
-	<%= @mission.customer.name %>	
+	Customer: <%= @mission.customer.name %>	
 </p>
 <p>
-	<%= to_status( @mission.status ) %>	
+	Status: <%= to_status( @mission.status ) %>	
 </p>
 
 <% if @mission.status == 0 %>
@@ -15,5 +15,14 @@
 														:id						=>	@mission.id,
 														:complete_mission	=>  true },
 							:method	  => 'put' %>
+<% elsif @mission.status == 2 %>
+	<p>Comments: <%= @mission.comment %></p>
+	<p>
+		<% if @mission.rating == -1 %>
+			<%= image_tag("thumbsdown.gif")%>
+		<% elsif @mission.rating == 1 %>
+			<%= image_tag("thumbsup.gif")%>
+		<% end %>
+	</p>
 <% end %>
 
