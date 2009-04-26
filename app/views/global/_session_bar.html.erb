@@ -4,8 +4,7 @@
 		<%= link_to current_user.email, current_user.messenger %> 	
 		<%= link_to "sign out", session_path, :method => :delete %>
 <% else %>
-	<%= link_to "sign in", { 	:controller 	=> 'sessions', 
-												 		:action 			=> 'new' } %>
+	<%= link_to "sign in", new_session_path  %>
 	|
 	<%= link_to "sign up", { 	:controller 	=> 'users', 
 												 		:action 			=> 'new' } %>
