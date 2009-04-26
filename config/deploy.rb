@@ -1,15 +1,51 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+set( :application ) { "treadex" }
+set( :deploy_to) { "/home/rsmith/app/#{application}" }
 
-# If you aren't deploying to /u/apps/#{application} on the target
-# servers (which is the default), you can specify the actual location
-# via the :deploy_to variable:
-# set :deploy_to, "/var/www/#{application}"
+#############################################################
+#	Settings
+#############################################################
 
-# If you aren't using Subversion to manage your source code, specify
-# your SCM below:
-# set :scm, :subversion
+default_run_options[:pty] = true
+set :use_sudo, false
+set :keep_releases, 3
+set :git_enable_submodules, 1
 
-role :app, "your app-server here"
-role :web, "your web-server here"
-role :db,  "your db-server here", :primary => true
+#############################################################
+#	Servers
+#############################################################
+
+set :user, "rsmith"
+set :domain, "174.143.27.236"
+server domain, :app, :web
+role :db, domain, :primary => true
+
+#############################################################
+#	Git
+#############################################################
+set :scm, :git
+set :repository, "git@github.com:ryandotsmith/treadex.git"
+set :branch, "master"
+set :deploy_via, :remote_cache
+
+
+#############################################################
+#	Passenger
+#############################################################
+namespace :deploy do
+  
+  desc "Restart Application"
+  task :restart, :roles => :app do
+    run "touch #{current_path}/tmp/restart.txt"
+    run "mkdir #{current_path}/tmp/sessions"
+  end
+
+  desc "Symlink shared configs and folders on each release."
+    task :symlink_shared do
+      run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    end
+      
+end
+after 'deploy:update_code', 'deploy:symlink_shared'
+#############################################################
+#	Attachment_FU 
+#############################################################

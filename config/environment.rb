@@ -11,14 +11,6 @@ Rails::Initializer.run do |config|
 
   config.active_record.observers = :messenger_observer
 
-  config.gem 'webrat',
-    :version => '= 0.4.4'
-  config.gem 'cucumber',
-    :version => '= 0.3.0'
-  config.gem 'thoughtbot-factory_girl',
-    :lib     => 'factory_girl',
-    :source  => "http://gems.github.com", 
-    :version => '1.2.1'
   config.gem "thoughtbot-clearance", 
     :lib     => 'clearance', 
     :source  => 'http://gems.github.com', 
