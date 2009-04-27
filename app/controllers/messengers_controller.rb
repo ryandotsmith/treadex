@@ -29,7 +29,7 @@ class MessengersController < ApplicationController
       @messenger.checked_in = DateTime.now.beginning_of_day if params[:checking_out] == "true"
       @messenger.save
       respond_to do |format|
-        format.js { render :text => "ok" }
+        format.js 
         format.html { redirect_to messenger_path( @messenger ) }
       end
     end

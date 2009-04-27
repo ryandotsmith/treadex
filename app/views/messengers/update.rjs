@@ -1,0 +1,1 @@
+page.replace_html 'messenger_dashboard', :partial => 'messenger_dashboard', :locals => { :messenger => @messenger}

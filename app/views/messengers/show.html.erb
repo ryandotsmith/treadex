@@ -29,31 +29,7 @@
 </div>						
 
 <% if current_user == @messenger.user %>
-
-	<% if @messenger.around? %>
-	<%= button_to_remote "check out",
-	 							:url	=>	{   :controller		=>	'messengers',
-															:action				=>	'update',
-															:id						=>	@messenger.id,
-															:checking_out	=>  true },
-								:method	  => 'put' %>
-		
-	<% else %>
-		<p> you are currently checked out. To get some work, </p>
-		<%= button_to_remote "check in",
-		 							:url	=>	{   :controller		=>	'messengers',
-																:action				=>	'update',
-																:id						=>	@messenger.id,
-																:checking_in	=>  true },
-									:method	  => 'put' %>
-	<% end %>
-	<p>
-		<%= link_to "update your profile.", edit_messenger_path %>
-	</p>
-	<ul>
-		<% @messenger.missions.each do |mission|%>
-			<%= link_to mission.created_at.to_date.to_s + " -- " + mission.customer.name.to_s + " -- " + to_status( mission.status ), mission %>
-			<br />
-		<% end %>
-	</ul>
+	<div id="messenger_dashboard">
+	<%= render :partial => 'messenger_dashboard', :locals => { :messenger => @messenger }%>		
+	</div><!--end messenger_dashboard-->
 <% end %>
