@@ -199,12 +199,20 @@ clear:both;
 .thirdlong{
 width:465px;
 height:auto;
-margin-left:237px; 
+left:295px;
+position:relative; 
 margin-bottom:10px;
 position:relative;
 background-color:#fff;
-clear:both;
+clear:right;
 /* padding:10px; */
+}
+#messenger_dashboard{
+left:10px;
+top:-300px;
+width:275px;
+height:auto;
+position:relative;
 }
 
 .review{
@@ -212,7 +220,8 @@ width: 465px;
 height: auto;
 position:relative;
 background:#dbdbdb;
-margin-left:237px; 
+left:295px;
+position:relative; 
 margin-bottom:10px;
 font-size:.8em;
 clear:both;
@@ -371,6 +380,37 @@ border:1px solid #F0CE57;
 /* ---------------- form ---------------- */
 
 .form{margin-left:300px; width:305px; height:auto;}
+
+
+
+
+#flash_notice{
+background-color:#F0CE57;
+height:36px;
+width:940px;
+margin-left:10px;
+margin-bottom:10px;
+clear:both;
+font-size:.8em;
+}
+#flash_failure{
+background-color:#ff6a6a;
+height:36px;
+width:940px;
+margin-left:10px;
+margin-bottom:10px;
+clear:both;
+font-size:.8em;
+}
+#flash_success{
+background-color:#dbdbdb;
+height:36px;
+width:940px;
+margin-left:10px;
+margin-bottom:10px;
+clear:both;
+font-size:.8em;
+}
 
 
 

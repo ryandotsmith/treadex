@@ -20,6 +20,7 @@
 	<%= @messenger.bio %>
 	</p>
 	</div><!--/div-->
+
 	<br /><br />
 <div class="review">
 <span class="reviewtitle"><strong>This dude rocks.</strong>  by Reviewer Person.<br /></span>
@@ -27,9 +28,8 @@
 `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.  
 </p>
 </div>						
-
 <% if current_user == @messenger.user %>
-	<div id="messenger_dashboard">
-	<%= render :partial => 'messenger_dashboard', :locals => { :messenger => @messenger }%>		
-	</div><!--end messenger_dashboard-->
+		<div id="messenger_dashboard">
+		<%= render :partial => 'messenger_dashboard', :locals => { :messenger => @messenger }%>		
+		</div><!--end messenger_dashboard-->		
 <% end %>
